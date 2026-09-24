@@ -66,8 +66,47 @@ df.info()
 
 These functions help to view the records, identify the size of the dataset, check column names, and understand the data types.
 
-## Data Visualization
 
-### 1. AAPL OHLC Prices
+**Data Visualization**
 
-The Open, High, Low, and Close prices are plotted to understand the daily stock p
+**1. AAPL OHLC Prices**
+
+The Open, High, Low, and Close prices are plotted to understand the daily stock price movement.
+
+plt.plot(df['Date'], df['Open'], label='Open')
+plt.plot(df['Date'], df['High'], label='High')
+plt.plot(df['Date'], df['Low'], label='Low')
+plt.plot(df['Date'], df['Close'], label='Close')
+
+**2. Trading Volume**
+
+Trading volume is visualized to understand how the number of traded shares changes over time.
+
+plt.plot(df['Date'], df['Volume'])
+
+**3. Moving Averages**
+
+Two moving averages are calculated:
+
+20-Day Moving Average
+50-Day Moving Average
+df['MA20'] = df['Close'].rolling(20).mean()
+df['MA50'] = df['Close'].rolling(50).mean()
+
+Moving averages help to observe the general direction of the closing price over different time periods.
+
+**Project Output**
+
+The project produces the following visualizations:
+
+AAPL OHLC Price Chart
+AAPL Trading Volume Chart
+AAPL Closing Price with 20-Day and 50-Day Moving Averages
+
+These visualizations help in understanding stock price and trading volume patterns.
+
+**Conclusion**
+
+This project provides a basic exploratory analysis of AAPL stock data. The analysis helps to understand the dataset structure, stock price movements, trading volume, and moving average trends.
+
+The project can be further extended by calculating daily price change, daily percentage return, return distribution, mean, variance, standard deviation, and detecting anomalous trading days.
